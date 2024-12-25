@@ -11,7 +11,7 @@ export const Section1 = () => {
     const [dataFinal, setDataFinal] = useState<any>(null);
 
     const defaultKeyword = searchParams.get("keyword") || "";
-    console.log(defaultKeyword);
+
 
     useEffect(() => {
         const dataSection1: any[] = [];
