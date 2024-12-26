@@ -14,7 +14,6 @@ export const Search = () => {
     }
 
     const defaultKeyWord = searchParams.get("keyword") || "";
-    console.log(defaultKeyWord);
 
 
     return (
