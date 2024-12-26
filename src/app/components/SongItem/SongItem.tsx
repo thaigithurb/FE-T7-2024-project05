@@ -9,7 +9,6 @@ import { Add } from "../Button/Add";
 export const SongItem = (props: {item: any}) => {
 
     const { item } = props;
-    console.log(item);
 
     return (
         <>
