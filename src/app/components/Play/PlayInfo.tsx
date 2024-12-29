@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 export const PlayInfo = () => {
+
     return (
         <>
-            <div className="flex items-center w-[25%]">
+            <a href={"/"} className="flex items-center w-[25%] inner-link">
                 <div className="mr-[13px] h-[49px] aspect-square">
                     <img
                         src="/"
@@ -16,7 +19,8 @@ export const PlayInfo = () => {
 
                     </div>
                 </div>
-            </div>
+            </a>
+
         </>
     );
 }

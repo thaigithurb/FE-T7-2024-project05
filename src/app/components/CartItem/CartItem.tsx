@@ -3,7 +3,6 @@ import Link from "next/link";
 export const CartItem = (props: any) => {
     
     const { item } = props;
-    console.log(item);
 
     return (
         <>

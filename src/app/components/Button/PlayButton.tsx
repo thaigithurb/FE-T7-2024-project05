@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 
 export const PlayButton = (props: any) => {
@@ -34,6 +35,12 @@ export const PlayButton = (props: any) => {
             elementTitle.innerHTML = item.name;
             const elementAuthors = elementPlayAudio?.querySelector(".inner-authors");
             elementAuthors.innerHTML = item.authors;
+            const elementLink = elementPlayAudio?.querySelector(".inner-link");
+            if (elementLink) {
+                elementLink.href = `/songs/${item.id}`;
+            }
+            
+           
 
             // xử lí nút pause và play
             const elementInnerPlayButton = elementPlayAudio.querySelector(".inner-play-button");

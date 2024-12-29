@@ -1,9 +1,20 @@
+"use client"
+
+
 import { PlayInfo } from "./PlayInfo";
 import { PlayActions } from "./PlayActions";
 import { PlayTime } from "./PlayTime";
 import { PlayVolume } from "./PlayVolume";
+import { useRouter } from "next/navigation";
 
-export const Play = () => {
+export const Play = (props: any) => {
+
+    const router = useRouter();
+    const { item } = props;
+
+    const handleClick = () => {
+        router.push(`/songs/${item.id}`);
+    }
 
     return (
         <>
