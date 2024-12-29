@@ -14,58 +14,25 @@ export const metadata: Metadata = {
 export default async function SongDetail(props: any) {
 
   const { id } = await props.params;
-  let dataFinal: any = null;
-  let lyric: any = null;
 
-  onValue(ref(db, '/songs/' + id), (item) => {
-    dataFinal = item.val();
-    lyric = dataFinal.lyric;
 
-    onValue(ref(db, '/singers/' + dataFinal.singerId[0]), (singer) => {
-      dataFinal["authors"] = singer.val().title;
-    })
-  })
+  // onValue(ref(db, '/songs/' + id), (item) => {
+  //   dataFinal = item.val();
 
-  const dataSection: any[] = [];
-  const songsRef = ref(db, '/songs');
-
-  onValue(songsRef, (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-
-      if (childData.categoryId === dataFinal.categoryId && childKey !== id) {
-        onValue(ref(db, '/singers/' + childData.singerId[0]), (singer) => {
-          const dataSinger = singer.val();
-          dataSection.push({
-            id: childKey,
-            img: childData.image,
-            name: childData.title,
-            authors: dataSinger.title,
-            duration: "4:32",
-            link: `/songs/${childKey}`,
-            audio: childData.audio
-          })
-        })
-      }
-    });
-  })
-
+  //   onValue(ref(db, '/singers/' + dataFinal.singerId[0]), (singer) => {
+  //     dataFinal["authors"] = singer.val().title;
+  //   })
+  // })
 
   return (
     <>
-      <CartInfo item={{
+      {/* <CartInfo item={{
         img: dataFinal?.image,
         name: dataFinal?.title,
         text: dataFinal?.authors,
-      }} />
-      <div>
-        <Title text={"Lời Bài Hát"} />
-        <div className="bg-color3 rounded-[15px] whitespace-pre-line p-[20px] font-[500] text-white mb-[30px]">
-          {lyric}
-        </div>
-      </div>
-      <SongSection id={id}/>
+      }} /> */}
+      
+      <SongSection id={id} />
     </>
   );
 }
