@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Title } from "./components/Title/Title";
-import { CartItem } from "./components/CartItem/CartItem";
-import { onValue, ref } from "firebase/database";
-import { db } from "./firebaseConfig";
-import { SongItem } from "./components/SongItem/SongItem";
+import { AlmostListens } from "./components/HomePage/AlmostListens";
+import { Category } from "./components/HomePage/Category";
+import { Singers } from "./components/HomePage/Singer";
 
 
 export const metadata: Metadata = {
@@ -12,74 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const songsRef = ref(db, '/songs');
-
-  const dataSection1: any[] = [];
-
-  onValue(songsRef, (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-
-      if (dataSection1.length < 3) {
-        onValue(ref(db, '/singers/' + childData.singerId[0]), (singer) => {
-          const dataSinger = singer.val();
-          dataSection1.push({
-            id: childKey,
-            img: childData.image,
-            name: childData.title,
-            authors: dataSinger.title,
-            listens: childData.listen,
-            link: `/songs/${childKey}`,
-            audio: childData.audio,
-            wishlist: childData.wishlist
-          })
-        })
-      }
-    });
-  })
-
-
-  const categoriesRef = ref(db, '/categories');
-  const dataSection2: any[] = [];
-
-
-  onValue(categoriesRef, (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-
-      if (dataSection2.length < 5) {
-        dataSection2.push({
-          id: childKey,
-          image: childData.image,
-          title: childData.title,
-          description: childData.description,
-          link: `/categories/${childKey}`
-        })
-      }
-    });
-  });
-
-  const singersRef = ref(db, '/singers');
-  const dataSection3: any[] = [];
-  onValue(singersRef, (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-
-      if (dataSection3.length < 5) {
-        dataSection3.push({
-          id: childKey,
-          image: childData.image,
-          title: childData.title,
-          description: childData.description,
-          link: `/singers/${childKey}`
-        })
-      }
-    });
-  });
-  
 
   return (
     <>
@@ -107,41 +38,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+    
         <div>
-          <Title text={"Nghe Nhiều"} />
-          <div className="grid grid-cols-1 gap-[12px]">
-            {
-              dataSection1.map((item, index) => (
-                <SongItem key={index} item={item} />
-              ))
-            }
-          </div>
+          <AlmostListens />
         </div>
       </div>
 
       {/* section2 (Danh mục nổi bật) */}
       <div className="mt-[30px]">
         <Title text={"Danh Mục Nổi Bật"} />
-        <div className="grid grid-cols-5 gap-[20px]">
-          {
-            dataSection2.map((item, index) => (
-              <CartItem key={index} item={item} />
-            ))
-          }
-        </div>
+        <Category />
       </div>
 
       {/* section 3 (ca sĩ nổi bật) */}
       <div className="mt-[30px]">
         <Title text={"Ca Sĩ Nổi Bật"} />
-        <div className="grid grid-cols-5 gap-[20px]">
-          {
-            dataSection3.map((item, index) => (
-              <CartItem key={index} item={item} />
-            ))
-          }
-        </div>
+        <Singers />
       </div>
     </>
   );

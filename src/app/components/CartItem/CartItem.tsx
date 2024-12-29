@@ -1,32 +1,25 @@
 import Link from "next/link";
 
-interface iItem {
-    image: string,
-    title: string,
-    description: string,
-    link: string
-}
-
-export const CartItem = (props: {item: iItem}) => {
+export const CartItem = (props: any) => {
     
-    const { image, title, description, link } = props.item;
+    const { item } = props;
 
     return (
         <>
-            <Link href={link}>
+            <Link href={item.link}>
                 <div className="aspect-square truncate mb-[10px]">
                     <img
-                        src={image}
-                        alt={title}
+                        src={item.img}
+                        alt={item.title}
                         className="object-cover rounded-[15px]"
                     />
     
                 </div>
                 <div className="font-[700] text-[14px] text-white mb-[10px]">
-                    {title}
+                    {item.title}
                 </div>
                 <div className="font-[400] text-[12px] line-clamp-1 text-[#FFFFFF80]">
-                    {description}
+                    {item.description}
                 </div>
             </Link>
         </>

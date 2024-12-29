@@ -4,6 +4,7 @@ import { Title } from "@/app/components/Title/Title";
 import { db } from "@/app/firebaseConfig";
 import { onValue, ref } from "firebase/database";
 import { Metadata } from "next";
+import { SongSection } from "../SongSection";
 
 export const metadata: Metadata = {
   title: "Chi tiết bài hát",
@@ -64,11 +65,7 @@ export default async function SongDetail(props: any) {
           {lyric}
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-[10px]">
-        {dataSection.map((item: any, index: any) => (
-          <SongItem1 key={index} item={item} />
-        ))}
-      </div>
+      <SongSection id={id}/>
     </>
   );
 }
