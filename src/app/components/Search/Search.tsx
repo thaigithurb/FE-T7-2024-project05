@@ -18,20 +18,25 @@ export const Search = () => {
 
     return (
         <>
-            <form
-                className="h-[52px] bg-color3 rounded-[50px] text-white py-[15px] px-[30px] sticky top-0 mt-[20px] flex items-center"
-                onSubmit={handleSearch}
-            >
-                <IoSearch className="text-[22px]" />
-                <input
-                    name="keyword"
-                    type="text"
-                    placeholder="Tìm kiếm..."
-                    className="w-full outline-none ml-[20px] font-[600] text-white text-[16px] bg-color3"
-                    defaultValue={defaultKeyWord}
-                    autoComplete="off"
-                />
-            </form>
+            <div className="sticky top-0 pt-[20px] ">
+                <form
+                    className="h-[52px] bg-color3 rounded-[50px] px-[30px] py-[15px] text-white flex items-center"
+                    onSubmit={handleSearch}
+                    style={{ boxShadow: '0 4px 6px -1px rgba(255, 250, 250, 0.05), 0 2px 4px -1px rgba(255, 250, 250, 0.06)' }}
+                >
+                    <IoSearch className="text-[22px]" />
+                    <input
+                        name="keyword"
+                        type="text"
+                        placeholder="Tìm kiếm..."
+                        className="w-full outline-none ml-[20px] font-[600] text-white text-[16px] bg-color3"
+                        defaultValue={defaultKeyWord}
+                        autoComplete="off"
+                    />
+                </form>
+
+            </div>
+
         </>
     );
 }

@@ -15,23 +15,8 @@ export default async function SongDetail(props: any) {
 
   const { id } = await props.params;
 
-
-  // onValue(ref(db, '/songs/' + id), (item) => {
-  //   dataFinal = item.val();
-
-  //   onValue(ref(db, '/singers/' + dataFinal.singerId[0]), (singer) => {
-  //     dataFinal["authors"] = singer.val().title;
-  //   })
-  // })
-
   return (
     <>
-      {/* <CartInfo item={{
-        img: dataFinal?.image,
-        name: dataFinal?.title,
-        text: dataFinal?.authors,
-      }} /> */}
-      
       <SongSection id={id} />
     </>
   );
