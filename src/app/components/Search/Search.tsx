@@ -18,7 +18,7 @@ export const Search = () => {
 
     return (
         <>
-            <div className="sticky top-0 pt-[20px] ">
+            <div className="sticky z-30 top-0 pt-[20px] ">
                 <form
                     className="h-[52px] bg-color3 rounded-[50px] px-[30px] py-[15px] text-white flex items-center"
                     onSubmit={handleSearch}

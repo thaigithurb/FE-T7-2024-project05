@@ -44,7 +44,7 @@ export const AlmostListens = () => {
     return (
         <>
             <Title text={"Nghe Nhiều"} />
-            <div className="grid grid-cols-1 gap-[12px]">
+            <div className="grid grid-cols-1 gap-[8px] xl:gap-[12px]">
                 {
                     dataFinal && dataFinal.map((item: any, index: any) => (
                         <SongItem key={index} item={item} />

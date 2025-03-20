@@ -4,6 +4,7 @@ import { Sider } from "./components/Sider/Sider";
 import { Play } from "./components/Play/Play";
 import { Search } from "./components/Search/Search";
 import { Suspense } from "react";
+import { OpenMenu } from "./components/OpenMenu/OpenMenu";
 
 
 export const metadata: Metadata = {
@@ -19,16 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-color1">
-        <div className="mx-[auto] container">
-          <div className="flex items-start">
-            <div className="w-[280px]">
+        <div className="mx-[auto] md:container lg:p-0 p-[16px] relative">
+          <OpenMenu />
+          <div className="md:flex items-start">
+            <div className="lg:block hidden w-auto md:w-[280px]">
               <Sider />
             </div>
-            <div className=" flex-1 ml-[20px]">
+            <div className="flex-1 lg:ml-[20px]">
               <Suspense fallback={<div>Loading...</div>}>
                 <Search />
               </Suspense>
-            
+
               <main className="mt-[30px] mb-[120px]">
                 {children}
               </main>

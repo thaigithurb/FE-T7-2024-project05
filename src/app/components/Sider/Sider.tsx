@@ -75,19 +75,19 @@ export const Sider = () => {
 
     return (
         <>
-            <div className=" bg-color3 h-[100vh] w-[280px] fixed">
+            <div className=" bg-color3 h-[100vh] w-[200px] lg:w-[280px] fixed">
                 <div className="text-white text-[24px] font-[700] pl-[20px] py-[25px] bg-[#1C1C1C]">
                     <Link href="/" className="flex items-center gap-[12px]">
                         <img
-                            className="h-[42px]"
+                            className="lg:h-[42px] h-[35px]"
                             src="/logo.svg"
                             alt="logo"
                         />
-                        <div className="text-color2">Sportfreefire</div>
+                        <div className="text-color2 lg:text-[16px] text-[18px]">Sportfreefire</div>
                     </Link>
                 </div>
-                <div className="text-[50px] font-[700] text-white px-[20px] mt-[30px]">
-                    <ul className="flex flex-col gap-[30px]">
+                <div className="text-[50px] font-[700] text-white px-[20px] mt-[30px] ">
+                    <ul className="flex flex-col gap-[20px] lg:gap-[30px]">
                         {menu.map((item, index) => (
                             <MenuItem 
                                 item={item} 

@@ -13,9 +13,9 @@ export const CartInfo = (props: { item: iItem }) => {
 
     return (
         <>
-            <div className="flex gap-[20px] items-center mb-[30px]">
+            <div className="flex gap-[12px] md:gap-[20px] items-center mb-[30px]">
                 <div>
-                    <div className="w-[177px]">
+                    <div className="lg:w-[177px] sm:w-[120px] w-[100px]">
                         <img
                             src={img}
                             alt={name}
@@ -25,10 +25,10 @@ export const CartInfo = (props: { item: iItem }) => {
                 </div>
 
                 <div className="">
-                    <div className="text-color2 font-[700] text-[35px]">
+                    <div className="text-color2 font-[700] text-[24px] md:text-[30px] lg:text-[35px]">
                         {name}
                     </div>
-                    <div className="text-[#EFEEE0] font-[400] text-[14px]">
+                    <div className="text-[#EFEEE0] font-[400] text-[13px] lg:text-[14px]">
                         {text}
                     </div>
                 </div>

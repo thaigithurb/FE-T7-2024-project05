@@ -76,7 +76,7 @@ export const SongSection = (props: any) => {
             }} />
             <div>
                 <Title text={"Lời Bài Hát"} />
-                <div className="bg-color3 rounded-[15px] whitespace-pre-line p-[20px] font-[500] text-white mb-[30px]">
+                <div className="bg-color3 rounded-[15px] whitespace-pre-line md:text-[16px] text-[14px] p-[10px] md:p-[20px] font-[500] text-white mb-[30px]">
                     {lyric}
                 </div>
             </div>

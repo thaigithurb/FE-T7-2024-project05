@@ -14,16 +14,16 @@ export const SongItem = (props: {item: any}) => {
         <>
             <div className="flex bg-color3 rounded-[15px] p-[10px] items-center" song-id={item.id}>
                 <Link href={item.link} className="flex flex-1">
-                    <div className="w-[76px] aspect-square object-cover">
+                    <div className="w-[76px] aspect-square object-contain rounded-[10px]">
                         <img
-                            className="w-full rounded-[10px]"
+                            className="w-full rounded-[10px] h-full object-covẻ"
                             src={item.img}
                             alt={item.name}
                         />
                     </div>
                     <div className="flex-1 ml-[10px]">
                         <div className="flex flex-col gap-[5px]">
-                            <div className="text-white font-[600] text-[16px]">
+                            <div className="text-white font-[600] text-[14px] xl:text-[16px]">
                                 {item.name}
                             </div>
                             <div className="text-[#FFFFFF80] font-[400] text-[12px]">

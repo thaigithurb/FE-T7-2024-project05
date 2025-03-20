@@ -33,7 +33,7 @@ export const Singers = () => {
 
     return (
         <>
-            <div className="grid grid-cols-5 gap-[20px]">
+            <div className="grid grid-cols-3 xl:grid-cols-5 gap-[20px]">
                 {
                     dataFinal && dataFinal.map((item, index) => (
                         <CartItem key={index} item={item} />

@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <>
       {/* section 1 (banner và mục nghe nhiều) */}
-      <div className="flex items-start gap-[20px]">
-        <div className="w-[534px]">
+      <div className="xl:flex items-start gap-[20px]">
+        <div className="w-full xl:w-[534px] mb-[20px]">
           <div
             className="w-full flex items-center rounded-[15px] bg-cover"
             style={{ backgroundImage: "url('/bg-1.png')" }}

@@ -41,7 +41,7 @@ export const RegisterForm = () => {
     return (
         <>
             <form
-                className="w-[500px]"
+                className="w-[95%] sm:w-[500px] sm:p-0 p-[10px]"
                 onSubmit={handleRegister}
             >
                 <div className="mb-[15px]">
