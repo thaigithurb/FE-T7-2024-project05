@@ -57,7 +57,7 @@ export const PlayActions = () => {
     return (
         <>
             <div 
-                className="flex items-center justify-center gap-[42px] outline-none"
+                className="flex items-center justify-center gap-[20px] md:gap-[42px] outline-none"
                 tabIndex={0} 
                 onKeyDown={handleKeyPress}
             >

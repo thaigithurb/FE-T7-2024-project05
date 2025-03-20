@@ -22,14 +22,14 @@ export const Play = (props: any) => {
                 <audio className="hidden inner-audio">
                     <source src="/" />
                 </audio>
-                <div className="container mx-[auto] pt-[22px] pb-[20px]">
+                <div className="md:container px-[10px] md:px-0 md:mx-[auto] pt-[12px] md:pt-[22px] pb-[8px] md:pb-[20px]">
                     <div className="flex items-center">
                         <PlayInfo />
-                        <div className=" flex-1 justify-center">
+                        <div className="flex-1 justify-center lg:m-0 mx-[10px]">
                             <PlayActions />
                             <PlayTime />
                         </div>
-                        <div className="w-[20%]">
+                        <div className="w-[20%] ml-[10px] md:m-0">
                             <PlayVolume />
                         </div>
                     </div>

@@ -83,7 +83,7 @@ export const Sider = () => {
                             src="/logo.svg"
                             alt="logo"
                         />
-                        <div className="text-color2 lg:text-[16px] text-[18px]">Sportfreefire</div>
+                        <div className="text-color2 lg:text-[25px] text-[18px]">Sportfreefire</div>
                     </Link>
                 </div>
                 <div className="text-[50px] font-[700] text-white px-[20px] mt-[30px] ">

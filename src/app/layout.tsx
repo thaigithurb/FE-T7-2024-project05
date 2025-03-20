@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="mx-[auto] md:container lg:p-0 p-[16px] relative">
           <OpenMenu />
           <div className="md:flex items-start">
-            <div className="lg:block hidden w-auto md:w-[280px]">
+            <div className="md:block hidden w-auto md:w-[280px]">
               <Sider />
             </div>
             <div className="flex-1 lg:ml-[20px]">
